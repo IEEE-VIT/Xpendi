@@ -11,18 +11,19 @@
 		31C891CC270624F60014389E /* Xpendi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C891B5270624F40014389E /* Xpendi.xcdatamodeld */; };
 		31C891CD270624F60014389E /* XpendiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C891B7270624F40014389E /* XpendiApp.swift */; };
 		31C891CE270624F60014389E /* XpendiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C891B7270624F40014389E /* XpendiApp.swift */; };
-		31C891CF270624F60014389E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C891B8270624F40014389E /* ContentView.swift */; };
-		31C891D0270624F60014389E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C891B8270624F40014389E /* ContentView.swift */; };
 		31C891D1270624F60014389E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C891B9270624F40014389E /* Persistence.swift */; };
 		31C891D2270624F60014389E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C891B9270624F40014389E /* Persistence.swift */; };
 		31C891D3270624F60014389E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C891BA270624F50014389E /* Assets.xcassets */; };
 		31C891D4270624F60014389E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C891BA270624F50014389E /* Assets.xcassets */; };
+		31EA00DF2708D4B600BA49FD /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EA00DE2708D4B600BA49FD /* Balance.swift */; };
+		31EA00E62708D54B00BA49FD /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EA00DE2708D4B600BA49FD /* Balance.swift */; };
+		31EA00E82708D57500BA49FD /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EA00E72708D57500BA49FD /* SwiftUIView.swift */; };
+		31EA00E92708D57800BA49FD /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EA00E72708D57500BA49FD /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		31C891B6270624F40014389E /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		31C891B7270624F40014389E /* XpendiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XpendiApp.swift; sourceTree = "<group>"; };
-		31C891B8270624F40014389E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		31C891B9270624F40014389E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		31C891BA270624F50014389E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31C891BF270624F60014389E /* Xpendi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xpendi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +31,8 @@
 		31C891C7270624F60014389E /* Xpendi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xpendi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C891C9270624F60014389E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31C891CA270624F60014389E /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		31EA00DE2708D4B600BA49FD /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		31EA00E72708D57500BA49FD /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +66,9 @@
 		31C891B4270624F40014389E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				31EA00E02708D4CD00BA49FD /* App */,
+				31EA00DD2708D49300BA49FD /* Model */,
 				31C891B7270624F40014389E /* XpendiApp.swift */,
-				31C891B8270624F40014389E /* ContentView.swift */,
 				31C891B9270624F40014389E /* Persistence.swift */,
 				31C891BA270624F50014389E /* Assets.xcassets */,
 				31C891B5270624F40014389E /* Xpendi.xcdatamodeld */,
@@ -96,6 +100,22 @@
 				31C891CA270624F60014389E /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		31EA00DD2708D49300BA49FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				31EA00DE2708D4B600BA49FD /* Balance.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		31EA00E02708D4CD00BA49FD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				31EA00E72708D57500BA49FD /* SwiftUIView.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +217,9 @@
 			files = (
 				31C891CB270624F60014389E /* Xpendi.xcdatamodeld in Sources */,
 				31C891D1270624F60014389E /* Persistence.swift in Sources */,
+				31EA00DF2708D4B600BA49FD /* Balance.swift in Sources */,
 				31C891CD270624F60014389E /* XpendiApp.swift in Sources */,
-				31C891CF270624F60014389E /* ContentView.swift in Sources */,
+				31EA00E82708D57500BA49FD /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,9 +228,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				31C891CC270624F60014389E /* Xpendi.xcdatamodeld in Sources */,
+				31EA00E62708D54B00BA49FD /* Balance.swift in Sources */,
 				31C891D2270624F60014389E /* Persistence.swift in Sources */,
 				31C891CE270624F60014389E /* XpendiApp.swift in Sources */,
-				31C891D0270624F60014389E /* ContentView.swift in Sources */,
+				31EA00E92708D57800BA49FD /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
