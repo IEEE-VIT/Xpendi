@@ -9,11 +9,35 @@ import SwiftUI
 
 struct ContentView: View {
     var balanceSheet: [Balance] = [Balance(amount: 567.8, title: "paid for popcorn", action: .withdrawal)]
+    @State var searchString: String = ""
+    
     var body: some View {
-        List {
-            ForEach(balanceSheet) {
-                Text("\($0.title ?? "")")
-                    .foregroundColor($0.action.color)
+        VStack {
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
+                        .padding(.leading)
+                        TextField("Search", text: $searchString).padding()
+                    if(searchString != "") {
+                        Button(action: {
+                            searchString = ""
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.gray)
+                                .padding(.trailing)
+                        }
+                    }
+                }
+            List {
+                ForEach(balanceSheet) {
+                    if(searchString == "") {
+                        Text("\($0.title )")
+                            .foregroundColor($0.action.color)
+                    } else if($0.title.lowercased().contains(searchString.lowercased())){
+                        Text("\($0.title )")
+                            .foregroundColor($0.action.color)
+                    }
+                }
             }
         }
         .toolbar {
