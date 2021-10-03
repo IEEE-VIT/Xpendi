@@ -13,22 +13,21 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            if #available(iOS 15.0, *) {
                 HStack {
-                    TextField(text: $searchString) {
-                            Text("\(Image(systemName: "magnifyingglass")) Search")
-                    }.padding()
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
+                        .padding(.leading)
+                        TextField("Search", text: $searchString).padding()
                     if(searchString != "") {
                         Button(action: {
                             searchString = ""
                         }) {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(.gray)
-                        }.padding()
+                                .padding(.trailing)
+                        }
                     }
                 }
-                
-            }
             List {
                 ForEach(balanceSheet) {
                     if(searchString == "") {
