@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186A51A9270EEC9B000F6756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186A51A8270EEC9B000F6756 /* LaunchScreen.storyboard */; };
 		31C891CB270624F60014389E /* Xpendi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C891B5270624F40014389E /* Xpendi.xcdatamodeld */; };
 		31C891CC270624F60014389E /* Xpendi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C891B5270624F40014389E /* Xpendi.xcdatamodeld */; };
 		31C891CD270624F60014389E /* XpendiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C891B7270624F40014389E /* XpendiApp.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		186A51A8270EEC9B000F6756 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31C891B6270624F40014389E /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		31C891B7270624F40014389E /* XpendiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XpendiApp.swift; sourceTree = "<group>"; };
 		31C891B9270624F40014389E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				31C891B9270624F40014389E /* Persistence.swift */,
 				31C891BA270624F50014389E /* Assets.xcassets */,
 				31C891B5270624F40014389E /* Xpendi.xcdatamodeld */,
+				186A51A8270EEC9B000F6756 /* LaunchScreen.storyboard */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31C891D3270624F60014389E /* Assets.xcassets in Resources */,
+				186A51A9270EEC9B000F6756 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
