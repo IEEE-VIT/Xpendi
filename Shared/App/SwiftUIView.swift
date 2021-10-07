@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    var balanceSheet: [Balance] = [Balance(amount: 567.8, title: "paid for popcorn", action: .withdrawal)]
+    @State var balanceSheet: [Balance] = [
+        Balance(amount: 567.8, title: "paid for popcorn", action: .withdrawal),
+        Balance(amount: 767.8, title: "paid for gas", action: .withdrawal)
+    ]
+    
     @State var searchString: String = ""
     
     var body: some View {
@@ -38,6 +42,9 @@ struct ContentView: View {
                             .foregroundColor($0.action.color)
                     }
                 }
+                #if os(iOS)
+                .onDelete(perform: deleteRow(at:))
+                #endif
             }
         }
         .toolbar {
@@ -51,6 +58,10 @@ struct ContentView: View {
         }
     }
     private func addItem() {
+    }
+    
+    private func deleteRow(at indexSet: IndexSet) {
+        balanceSheet.remove(atOffsets: indexSet)
     }
 }
 
