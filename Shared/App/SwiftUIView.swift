@@ -16,12 +16,13 @@ struct ContentView: View {
     @State var searchString: String = ""
     
     var body: some View {
-        VStack {
+        NavigationView {
+            VStack(spacing: .zero) {
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
                         .padding(.leading)
-                        TextField("Search", text: $searchString).padding()
+                    TextField("Search", text: $searchString).padding()
                     if(searchString != "") {
                         Button(action: {
                             searchString = ""
@@ -32,28 +33,34 @@ struct ContentView: View {
                         }
                     }
                 }
-            List {
-                ForEach(balanceSheet) {
-                    if(searchString == "") {
-                        Text("\($0.title )")
-                            .foregroundColor($0.action.color)
-                    } else if($0.title.lowercased().contains(searchString.lowercased())){
-                        Text("\($0.title )")
-                            .foregroundColor($0.action.color)
+                List {
+                    ForEach(balanceSheet) {
+                        if(searchString == "") {
+                            Text("\($0.title )")
+                                .foregroundColor($0.action.color)
+                        } else if($0.title.lowercased().contains(searchString.lowercased())){
+                            Text("\($0.title )")
+                                .foregroundColor($0.action.color)
+                        }
+                    }
+                    #if os(iOS)
+                    .onDelete(perform: deleteRow(at:))
+                    #endif
+                }
+                .navigationBarHidden(true)
+            }
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    #if os(iOS)
+                    EditButton()
+                    #endif
+                }
+
+                ToolbarItem(placement: .bottomBar) {
+                    Button(action: addItem) {
+                        Label("Add Item", systemImage: "plus")
                     }
                 }
-                #if os(iOS)
-                .onDelete(perform: deleteRow(at:))
-                #endif
-            }
-        }
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
-
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
             }
         }
     }
