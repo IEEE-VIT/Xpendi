@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+enum SortOption {
+    case amountLowToHigh
+    case amountHighToLow
+    case dateOldestFirst
+    case dateNewestFirst
+}
+
 struct ContentView: View {
     @State var balanceSheet: [Balance] = [
         Balance(amount: 567.8, title: "paid for popcorn", action: .withdrawal),
@@ -32,6 +39,24 @@ struct ContentView: View {
                                 .padding(.trailing)
                         }
                     }
+
+                    Menu {
+                        Button("Amount: Low to High", action: {
+                            sortBy(.amountLowToHigh)
+                        })
+                        Button("Amount: High to Low", action: {
+                            sortBy(.amountHighToLow)
+                        })
+                        Button("Date: Oldest first", action: {
+                            sortBy(.dateOldestFirst)
+                        })
+                        Button("Date: Newest first", action: {
+                            sortBy(.dateNewestFirst)
+                        })
+                    } label: {
+                        Image(systemName: "arrow.up.arrow.down")
+                    }
+                    .padding()
                 }
                 List {
                     ForEach(balanceSheet) {
@@ -64,11 +89,33 @@ struct ContentView: View {
             }
         }
     }
+
     private func addItem() {
     }
     
     private func deleteRow(at indexSet: IndexSet) {
         balanceSheet.remove(atOffsets: indexSet)
+    }
+
+    private func sortBy(_ option: SortOption) {
+        switch option {
+        case .amountLowToHigh:
+            balanceSheet.sort {
+                $0.amount < $1.amount
+            }
+        case .amountHighToLow:
+            balanceSheet.sort {
+                $0.amount > $1.amount
+            }
+        case .dateOldestFirst:
+            balanceSheet.sort {
+                $0.date > $1.date
+            }
+        case .dateNewestFirst:
+            balanceSheet.sort {
+                $0.date < $1.date
+            }
+        }
     }
 }
 
