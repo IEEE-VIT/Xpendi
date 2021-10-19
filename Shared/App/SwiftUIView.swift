@@ -72,16 +72,18 @@ struct ContentView: View {
                     .onDelete(perform: deleteRow(at:))
                     #endif
                 }
+                #if os(iOS)
                 .navigationBarHidden(true)
+                #endif
             }
             .toolbar {
+                #if os(iOS)
                 ToolbarItem(placement: .bottomBar) {
-                    #if os(iOS)
                     EditButton()
-                    #endif
                 }
+                #endif
 
-                ToolbarItem(placement: .bottomBar) {
+                ToolbarItem(placement: .primaryAction) {
                     Button(action: addItem) {
                         Label("Add Item", systemImage: "plus")
                     }
