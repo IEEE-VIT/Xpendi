@@ -22,6 +22,9 @@ struct ContentView: View {
     
     @State var searchString: String = ""
     
+    @State private var newBalance = Balance(amount: 0.0, title: "", action: .withdrawal)
+    
+    @State var isPresented = false
     var body: some View {
         NavigationView {
             VStack(spacing: .zero) {
@@ -39,7 +42,7 @@ struct ContentView: View {
                                 .padding(.trailing)
                         }
                     }
-
+                    
                     Menu {
                         Button("Amount: Low to High", action: {
                             sortBy(.amountLowToHigh)
@@ -56,6 +59,9 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "arrow.up.arrow.down")
                     }
+                    Button(action: {isPresented = true}){
+                        Image(systemName: "plus")
+                    }
                     .padding()
                 }
                 List {
@@ -68,37 +74,52 @@ struct ContentView: View {
                                 .foregroundColor($0.action.color)
                         }
                     }
-                    #if os(iOS)
+#if os(iOS)
                     .onDelete(perform: deleteRow(at:))
-                    #endif
+                    .sheet(isPresented: $isPresented){
+                        NavigationView {
+                            AddBalanceView(newBalance: $newBalance)
+                                .toolbar {
+                                    ToolbarItem(placement: .navigationBarLeading) {
+                                        Button(action: { isPresented = false }) {
+                                            Text("Dismiss")
+                                        }
+                                    }
+                                    ToolbarItem(placement: .navigationBarTrailing) {
+                                        Button(action: {
+                                            // add persistence code here
+                                            isPresented = false
+                                        }) {
+                                            Text("Add")
+                                        }
+                                    }
+                                }
+                        }
+                    }
+#endif
                 }
-                #if os(iOS)
+#if os(iOS)
                 .navigationBarHidden(true)
-                #endif
+#endif
             }
             .toolbar {
-                #if os(iOS)
+#if os(iOS)
                 ToolbarItem(placement: .bottomBar) {
                     EditButton()
                 }
-                #endif
-
-                ToolbarItem(placement: .primaryAction) {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+#endif
+                
             }
         }
     }
-
+    
     private func addItem() {
     }
     
     private func deleteRow(at indexSet: IndexSet) {
         balanceSheet.remove(atOffsets: indexSet)
     }
-
+    
     private func sortBy(_ option: SortOption) {
         switch option {
         case .amountLowToHigh:

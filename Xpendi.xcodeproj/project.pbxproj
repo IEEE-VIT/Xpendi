@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		186A51A9270EEC9B000F6756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186A51A8270EEC9B000F6756 /* LaunchScreen.storyboard */; };
+		316DDD5E272FB57400D37160 /* AddBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316DDD5D272FB57400D37160 /* AddBalanceView.swift */; };
+		316DDD5F272FB57400D37160 /* AddBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316DDD5D272FB57400D37160 /* AddBalanceView.swift */; };
 		31C891CB270624F60014389E /* Xpendi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C891B5270624F40014389E /* Xpendi.xcdatamodeld */; };
 		31C891CC270624F60014389E /* Xpendi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C891B5270624F40014389E /* Xpendi.xcdatamodeld */; };
 		31C891CD270624F60014389E /* XpendiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C891B7270624F40014389E /* XpendiApp.swift */; };
@@ -24,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		186A51A8270EEC9B000F6756 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		316DDD5D272FB57400D37160 /* AddBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBalanceView.swift; sourceTree = "<group>"; };
 		31C891B6270624F40014389E /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		31C891B7270624F40014389E /* XpendiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XpendiApp.swift; sourceTree = "<group>"; };
 		31C891B9270624F40014389E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				31EA00E72708D57500BA49FD /* SwiftUIView.swift */,
+				316DDD5D272FB57400D37160 /* AddBalanceView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -220,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31C891CB270624F60014389E /* Xpendi.xcdatamodeld in Sources */,
+				316DDD5E272FB57400D37160 /* AddBalanceView.swift in Sources */,
 				31C891D1270624F60014389E /* Persistence.swift in Sources */,
 				31EA00DF2708D4B600BA49FD /* Balance.swift in Sources */,
 				31C891CD270624F60014389E /* XpendiApp.swift in Sources */,
@@ -232,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31C891CC270624F60014389E /* Xpendi.xcdatamodeld in Sources */,
+				316DDD5F272FB57400D37160 /* AddBalanceView.swift in Sources */,
 				31EA00E62708D54B00BA49FD /* Balance.swift in Sources */,
 				31C891D2270624F60014389E /* Persistence.swift in Sources */,
 				31C891CE270624F60014389E /* XpendiApp.swift in Sources */,
